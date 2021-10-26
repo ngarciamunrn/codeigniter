@@ -9,6 +9,6 @@ class User extends Entity
 
     public function isAdmin()
     {
-        return $this->username == "nico";
+        return $this->username == "Administrador";
     }
 }
