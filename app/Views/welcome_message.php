@@ -65,11 +65,7 @@
 			background-color: rgba(221, 72, 20, .2);
 			color: rgba(221, 72, 20, 1);
 		}
-		header .logo {
-			float: left;
-			height: 44px;
-			padding: .4rem .5rem;
-		}
+		
 		header .menu-toggle {
 			display: none;
 			float: right;

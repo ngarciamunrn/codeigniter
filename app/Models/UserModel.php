@@ -31,6 +31,8 @@ class UserModel extends Model
             return $query->getResult();
         else 
             return false;
+
+            
         
     }
     
