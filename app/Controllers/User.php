@@ -7,21 +7,24 @@ use App\Models\UserModel;
 class User extends BaseController
 {
 
+
+    public function mostrar($contet, $data) {
+
+        echo view('template/header',$data);
+        echo view($contet, $data);
+        echo view('template/footer',$data);
+
+    }
  
     public function index()
     {
-
-        if (session()->role == 'Cliente')
-            redirect()->to('/user/login');
 
         $userModel = new UserModel();
         
         $data['title'] = "Lista de Usuarios";
         $data['users'] = $userModel->findAll();
-        
-        echo view('template/header',$data);
-        echo view('user/list',$data);
-        echo view('template/footer');
+        $this->mostrar('user/list', $data);
+       
     }
 
     public function delete($id)
@@ -31,16 +34,15 @@ class User extends BaseController
         $data['title'] = "Lista de Usuarios";
         $data['users'] = $userModel->findAll();
 
-        echo view('template/header',$data);
-        echo view('user/list',$data);
-        echo view('template/footer');
+        $this->mostrar('user/list', $data);
     }
 
     public function create() {
         $data['title'] = "Crear Usuario";
-        echo view('template/header',$data);
-        echo view('user/create');
-        echo view('template/footer');
+
+
+        $this->mostrar('user/create', $data);
+
     }
 
     public function save()

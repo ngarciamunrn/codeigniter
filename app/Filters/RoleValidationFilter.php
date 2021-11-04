@@ -18,7 +18,7 @@ class RoleValidationFilter implements FilterInterface
 
     public $rol_permisos = array(
         'ADMIN' => array('user','home'),
-        'CLIENTE' => array('home'),
+        'CLIENTE' => array('user','home'),
         'VENDEDOR' => array('home')
     );
 
